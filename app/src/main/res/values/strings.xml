@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CloudWatch</string>
+
+    <string name="facebook_app_id" translatable="false"> 715837699433965</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb715837699433965</string>
+    <string name="facebook_client_token" translatable="false">804b36f56f3d3e074af39406e7baed44</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_text_1">Don\'t let the weather take you by surprise. With our 24-hour weather forecast, stay ahead of the weather!</string>
+    <string name="onboarding_text_2">Enjoy the outdoors without worrying when the weather is going to change</string>
+    <string name="onboarding_text_3">Plan family gatherings for the family with all the preparations necessary for your little ones</string>
+    <string name="onboarding_text_4">omo..still coming up with the write-up for this OnBoarding Screen</string>
+</resources>

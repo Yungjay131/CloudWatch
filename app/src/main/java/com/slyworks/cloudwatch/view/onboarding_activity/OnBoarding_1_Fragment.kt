@@ -1,0 +1,15 @@
+package com.slyworks.cloudwatch.view.onboarding_activity
+
+import androidx.fragment.app.Fragment
+import com.slyworks.cloudwatch.R
+
+
+class OnBoarding_1_Fragment : Fragment(R.layout.fragment_on_boarding_1) {
+    companion object {
+        @JvmStatic
+        fun newInstance(): OnBoarding_1_Fragment {
+            return OnBoarding_1_Fragment()
+        }
+    }
+
+}
