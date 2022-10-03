@@ -1,6 +1,6 @@
 ext.depends = [:]
 ext.sdkDetails = [:]
-ext.plugins = [:]
+ext.plugs = [:]
 
 def _depends = [:]
 def _sdkDetails = [:]
@@ -58,7 +58,7 @@ _depends.firebase_crashlytics = "com.google.firebase:firebase-crashlytics-ktx"
 _depends.firebase_messaging = "com.google.firebase:firebase-messaging-ktx"
 
 _depends.play_safetynet = "com.google.android.gms:play-services-safetynet:18.0.1"
-_depends.play_auth = "com.google.android.gms:play-services-auth:20.1.0"
+_depends.play_auth = "com.google.android.gms:play-services-auth:20.3.0"
 
 def facebook = "13.1.0"
 _depends.facebook_login = "com.facebook.android:facebook-login:$facebook"
@@ -69,6 +69,8 @@ _depends.rxjava = "io.reactivex.rxjava3:rxjava:3.1.3"
 def rxbinding = "4.0.0"
 _depends.rxbinding = "com.jakewharton.rxbinding4:rxbinding:$rxbinding"
 _depends.rxbinding_material = "com.jakewharton.rxbinding4:rxbinding-material:$rxbinding"
+
+_depends.rxrelay = "com.jakewharton.rxrelay3:rxrelay:3.0.1"
 
 def dagger = "2.42"
 _depends.dagger = "com.google.dagger:dagger:$dagger"
