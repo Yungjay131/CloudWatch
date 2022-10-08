@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "376234534219",
+    "firebase_url": "https://weatherapp-d3686-default-rtdb.firebaseio.com",
+    "project_id": "weatherapp-d3686",
+    "storage_bucket": "weatherapp-d3686.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376234534219:android:642435a099200b6576f4ce",
+        "android_client_info": {
+          "package_name": "app.slyworks.cloudwatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376234534219-a1no2od4rel1gl4a0u8j1bslhb14sgd1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.slyworks.cloudwatch",
+            "certificate_hash": "bb1c3d33f06ecec6c4605411678dfd0ac6f8ea36"
+          }
+        },
+        {
+          "client_id": "376234534219-hr50rid18ccps37q45no05e3j3rb9798.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Q7UQqnLqZir8T3M0rHTb22su2nH0f2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376234534219-hr50rid18ccps37q45no05e3j3rb9798.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376234534219:android:8b60d325296dfa5d76f4ce",
+        "android_client_info": {
+          "package_name": "com.slyworks.weatherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376234534219-hr50rid18ccps37q45no05e3j3rb9798.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Q7UQqnLqZir8T3M0rHTb22su2nH0f2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376234534219-hr50rid18ccps37q45no05e3j3rb9798.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

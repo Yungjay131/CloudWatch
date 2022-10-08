@@ -25,8 +25,8 @@ _depends.cardview = "androidx.cardview:cardview:1.0.0"
 _depends.drawerlayout = "androidx.drawerlayout:drawerlayout:1.1.1"
 _depends.asynclayoutinflater = "androidx.asynclayoutinflater:asynclayoutinflater:1.0.0"
 
-_depends.core_ktx = "androidx.core:core-ktx:1.9.0"
-_depends.appcompat = "androidx.appcompat:appcompat:1.5.1"
+_depends.core_ktx = "androidx.core:core-ktx:1.7.0"
+_depends.appcompat = "androidx.appcompat:appcompat:1.4.1"
 _depends.legacy_support = "androidx.legacy:legacy-support-v4:1.0.0"
 
 def lifecycle = "2.4.0"

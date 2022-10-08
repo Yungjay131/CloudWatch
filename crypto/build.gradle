@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
@@ -10,13 +10,13 @@ android {
     compileSdk sdkDetails.compileSDK
 
     defaultConfig {
-        applicationId sdkDetails.applicationID
         minSdk sdkDetails.minSDK
         targetSdk sdkDetails.targetSDK
         versionCode sdkDetails.versionCode
         versionName sdkDetails.versionName
 
         testInstrumentationRunner defaultTestInstrumentationRunner
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -26,7 +26,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            minifyEnabled false
+            minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -38,23 +38,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    viewBinding {
-        enabled true
-    }
 }
 
 dependencies {
     implementation depends.appcompat
     implementation depends.core_ktx
-    implementation depends.lifecycle_viewmodel
     implementation depends.material
-    implementation depends.constraintlayout
-    implementation depends.cardview
-    implementation depends.glide
-    implementation depends.shimmer
     implementation depends.rxjava
-    implementation depends.rxbinding
-    implementation depends.navigator
+    implementation depends.rxrelay
     implementation depends.timber
     implementation depends.dagger
     kapt depends.dagger_kapt
