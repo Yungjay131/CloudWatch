@@ -1,4 +1,4 @@
-package com.slyworks.models.models
+package app.slyworks.models
 
 import kotlin.UnsupportedOperationException
 

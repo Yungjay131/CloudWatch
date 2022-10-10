@@ -14,7 +14,7 @@ _plugins.firebase_crashlytics = "com.google.firebase.crashlytics"
 
 _sdkDetails.compileSDK = 33
 _sdkDetails.applicationID = "app.slyworks.cloudwatch"
-_sdkDetails.minSDk = 21
+_sdkDetails.minSDK = 21
 _sdkDetails.targetSDK = 33
 _sdkDetails.versionCode = 1
 _sdkDetails.versionName = "1.0.0"

@@ -9,6 +9,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import app.slyworks.crypto.CryptoManager
+import app.slyworks.models.Outcome
 import com.google.android.gms.auth.api.identity.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -26,7 +28,7 @@ import timber.log.Timber
  * Created by Joshua Sylvanus, 5:57 PM, 01-Oct-22.
  */
 class LoginManager(private val firebaseAuth: FirebaseAuth,
-                   private val cryptoManager:CryptoManager) {
+                   private val cryptoManager: CryptoManager) {
     //region Vars
     private val googleSignInSubject: PublishRelay<Outcome> = PublishRelay.create()
     private lateinit var googleOneTapSignInClient:SignInClient
@@ -53,20 +55,23 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
     }
 
     fun loginViaEmail(email:String, password:String):Observable<Outcome>
-    = cryptoManager.hashPassword(password)
-            .zipWith(Observable.just(email), Pair<String,String>::new)
-            .flatMap{ loginWithFirebaseAuth(it) }
-            .returnOnError {}
+    = cryptoManager.encrypt(email)
+            .zipWith(cryptoManager.hash(password), ::Pair)
+            .flatMap{ it:Pair<String,String> -> loginWithFirebaseAuth(it) }
+            .onErrorReturn {
+                Timber.e("error occurred: ${it.message}")
+                Outcome.ERROR<Boolean>(false, additionalInfo = it.message)
+            }
 
     private fun loginWithFirebaseAuth(params:Pair<String,String>):Observable<Outcome>
     = Observable.create { emitter ->
-        firebaseAuth.signInWithEmailAndPassword(it.second, it.first)
+        firebaseAuth.signInWithEmailAndPassword(params.second, params.first)
             .addOnCompleteListener {
                 if (it.isSuccessful)
-                    emitter.onNext()
+                    emitter.onNext(Outcome.SUCCESS<Boolean>(true, "user successfully logged in"))
                 else{
-                   Timber.e("error occurred: ${it.exception?.message}")
-                    emitter.onNext()
+                    Timber.e("error occurred: ${it.exception?.message}")
+                    emitter.onNext(Outcome.FAILURE<Boolean>(false, it.exception?.message))
                 }
 
                 emitter.onComplete()
@@ -77,7 +82,7 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
         /* configure google sign in */
         val googleSignInOptions:GoogleSignInOptions =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken()
+                .requestIdToken("")
                 .requestEmail()
                 .build()
 
@@ -90,6 +95,7 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
                 BeginSignInRequest.GoogleIdTokenRequestOptions
                     .builder()
                     .setSupported(true)
+                        /*fixme: get this server ID from Firebase */
                     .setServerClientId("928864674268-nphsnq4b7qh34j6lmvmv8gghctp2gn68.apps.googleusercontent.com")
                     .setFilterByAuthorizedAccounts(true)
                     .build())
@@ -118,7 +124,7 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
         : ActivityResultCallback<ActivityResult>{
         override fun onActivityResult(result: ActivityResult?) {
             if(result == null){
-                o.accept()
+                o.accept(Outcome.FAILURE<Boolean>(false, "no result retrieved"))
                 return
             }
 
@@ -126,23 +132,27 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
                 Activity.RESULT_OK ->{
                     var credential:SignInCredential? = null
                     var idToken:String? = null
+                    var firebaseCredential:AuthCredential? = null
                     try{
                       credential = googleOneTapSignInClient. getSignInCredentialFromIntent(result.data)
                       idToken = credential.googleIdToken
+
+                      firebaseCredential = GoogleAuthProvider.getCredential(idToken, null)
                     }catch(e:Exception){
                         Timber.e(e, "no idToken")
-                        o.accept()
+                        o.accept(Outcome.ERROR<Boolean>(false, e.message))
                         return
                     }
 
-                    val firebaseCredential:AuthCredential
-                     = GoogleAuthProvider.getCredential(idToken, null)
                     firebaseAuth.signInWithCredential(firebaseCredential)
                         .addOnCompleteListener {
-                            o.accept()
+                            if(it.isSuccessful)
+                                o.accept(Outcome.SUCCESS<Boolean>(true, "sign-in with credential successful"))
+                            else
+                                o.accept(Outcome.FAILURE<Boolean>(false, it.exception?.message))
                         }
                 }
-                else -> o.accept()
+                else -> o.accept(Outcome.FAILURE<Boolean>(false, "attempt to login was not successful"))
 
             }
 
