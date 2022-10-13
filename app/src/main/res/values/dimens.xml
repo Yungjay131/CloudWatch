@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_radius">24dp</dimen>
+    <dimen name="btn_onboarding_2_radius">6dp</dimen>
+    <dimen name="btn_onboarding_radius">16dp</dimen>
+    <dimen name="main_radius">16dp</dimen>
+    <dimen name="dimen_tab">30dp</dimen>
+    <dimen name="tab_item_height">14dp</dimen>
+    <dimen name="tab_item_width">14dp</dimen>
+    <dimen name="tab_outer">14dp</dimen>
+    <dimen name="tab_item_height2">8dp</dimen>
+    <dimen name="et_corner_radius">12dp</dimen>
+
+    <item name="guide_percent" format="float" type="integer">0.6</item>
+</resources>

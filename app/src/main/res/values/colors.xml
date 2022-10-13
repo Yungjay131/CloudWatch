@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="appGreen">#00C853</color>
+    <color name="appOrange">#E9CF27</color>
+    <color name="appBlue">#1F4CA5</color>
+    <color name="appPink">#880E4F</color>
+    <color name="appBlack_bg">#201D1D</color>
+    <color name="appOrange_pressed">#E1D5BA10</color>
+    <color name="appGrey">#D5D0D0</color>
 </resources>

@@ -8,14 +8,14 @@ import io.reactivex.rxjava3.core.Observable
  */
 class CryptoManager(private val conf:CryptoConf) {
     fun hash(str:String): Observable<String>
-    = Observable.fromCallable {}
+    = Observable.fromCallable {""}
 
     fun confirmHash(str:String):Observable<String>
-    = Observable.fromCallable {}
+    = Observable.fromCallable {""}
 
     fun encrypt(str:String):Observable<String>
-    = Observable.fromCallable {}
+    = Observable.fromCallable {""}
 
     fun decrypt(str:String):Observable<String>
-    = Observable.fromCallable {}
+    = Observable.fromCallable {""}
 }

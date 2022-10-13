@@ -95,8 +95,8 @@ _depends.timber = "com.jakewharton.timber:timber:5.0.1"
 
 _depends.mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
 
-_depends.lottie = "'com.airbnb.android:lottie:5.0.3"
-_depends.glide = "com.github.bumptech.glide:4.13.0"
+_depends.lottie = "com.airbnb.android:lottie:5.0.3"
+_depends.glide = "com.github.bumptech.glide:glide:4.13.0"
 _depends.circle_imageview = "de.hdodenhof:circleimageview:3.1.0"
 _depends.shimmer = "com.facebook.shimmer:shimmer:0.5.0"
 
