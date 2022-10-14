@@ -49,6 +49,7 @@ dependencies {
     implementation depends.appcompat
     implementation depends.core_ktx
     implementation depends.lifecycle_viewmodel
+    implementation depends.preference_ktx
     implementation depends.material
     implementation depends.constraintlayout
     implementation depends.cardview

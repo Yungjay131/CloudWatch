@@ -15,4 +15,7 @@
     <color name="appBlack_bg">#201D1D</color>
     <color name="appOrange_pressed">#E1D5BA10</color>
     <color name="appGrey">#D5D0D0</color>
+
+    <color name="appDark">#2D313D</color>
+    <color name="appDark2">#8D8F97</color>
 </resources>
