@@ -57,6 +57,7 @@ dependencies {
     implementation depends.shimmer
     implementation depends.rxjava
     implementation depends.rxbinding
+    implementation depends.rxrelay
     implementation depends.navigator
     implementation depends.timber
     implementation depends.dagger
