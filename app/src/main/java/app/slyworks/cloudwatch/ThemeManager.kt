@@ -1,8 +1,7 @@
-package app.slyworks.cloudwatch.ui.auth_activity
+package app.slyworks.cloudwatch
 
 import android.app.Activity
 import android.content.Intent
-import app.slyworks.cloudwatch.R
 
 
 /**
