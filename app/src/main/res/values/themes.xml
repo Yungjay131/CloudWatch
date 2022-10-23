@@ -12,20 +12,21 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
 
 
-    <!--usge would be ?ttr/bckground_color-->
+    <!--usage would be ?ttr/background_color-->
     <style name="AppTheme.Light" parent="Theme.Cloudwatch">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
 
-        <item name="background_color">@color/white</item>
-        <item name="card_background">@color/white</item>
-        <item name="text_color">@color/white</item>
+        <item name="app_background_color">@color/white</item>
+        <item name="app_card_background">@color/white</item>
+        <item name="app_text_color">@color/white</item>
 
-        <item name="android:windowAnimationStyle">@style/WindowAnimationStyle</item>
+        <item name="android:windowAnimationStyle">@style/windowAnimationTransition</item>
     </style>
 
     <style name="AppTheme.Dark" parent="Theme.Cloudwatch">
@@ -33,16 +34,16 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
 
-        <item name="background_color">@color/white</item>
-        <item name="card_background">@color/white</item>
-        <item name="text_color">@color/white</item>
+        <item name="app_background_color">@color/white</item>
+        <item name="app_card_background">@color/white</item>
+        <item name="app_text_color">@color/white</item>
 
-        <item name="android:windowAnimationStyle">@style/WindowAnimationStyle</item>
+        <item name="android:windowAnimationStyle">@style/windowAnimationTransition</item>
     </style>
 
     <!-- transitions for when the theme is changed -->
-    <style name="WindowAnimationTransition">
+    <style name="windowAnimationTransition">
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
-        <item name="android:windowExitAnimation">@ndroid:anim/fade_out</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 </resources>

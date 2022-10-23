@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/app_background_color"
     tools:context=".ui.auth_activity.AuthActivity"
     android:transitionGroup="true">
 
@@ -14,7 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guide_horizontal_1">
+        app:layout_constraintBottom_toTopOf="@id/guide_horizontal_1"
+        android:background="@android:color/transparent">
 
         <ImageView
             android:id="@+id/ivCover_1"
@@ -219,7 +221,7 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent=".75"/>
 
-        <androidx.constraintlayout.widget.Guideline
+      <!--  <androidx.constraintlayout.widget.Guideline
             android:id="@+id/_guide_horizontal_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -227,8 +229,251 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".92"/>
+            app:layout_constraintGuide_percent=".92"/>-->
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_horizontal_3"
+        app:layout_constraintBottom_toTopOf="@id/guide_horizontal_2"
+        android:elevation="1dp"
+        android:background="@android:color/transparent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@color/white"/>
+
+        <TextView
+            android:id="@+id/tvLogo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1"
+            android:gravity="center"
+            android:text="CloudWatch"
+            android:textSize="38sp"
+            android:textColor="@color/appOrange"
+            android:letterSpacing="0.05"
+            android:fontFamily="@font/pacifico"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_horizontal_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="30dp"
+        android:scrollIndicators="right"
+        android:scrollBars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="2dp"
+        android:fadeScrollbars="false"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/transparent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_login_selector"
+                android:stateListAnimator="@xml/btn_state_list_animator"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn_login_selector_normal"
+                android:stateListAnimator="@xml/btn_state_list_animator"
+                android:text="Sign Up"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+            <TextView
+                android:id="@+id/tvOr_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintTop_toBottomOf="@id/btnSignUp"
+                android:layout_marginTop="24dp"
+                android:text="OR"
+                android:textColor="@color/white"
+                android:textSize="14sp"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintEnd_toStartOf="@id/tvOr_text"
+                app:layout_constraintTop_toTopOf="@id/tvOr_text"
+                app:layout_constraintBottom_toBottomOf="@id/tvOr_text"
+                android:layout_marginEnd="16dp"
+                app:dividerColor="@color/white"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toEndOf="@id/tvOr_text"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintTop_toTopOf="@id/tvOr_text"
+                app:layout_constraintBottom_toBottomOf="@id/tvOr_text"
+                android:layout_marginStart="16dp"
+                app:dividerColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin_phone_number"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/btn_login_selector_normal"
+                android:stateListAnimator="@xml/btn_state_list_animator"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:drawableStart="@drawable/keypad_phone"
+                android:drawableTint="@color/appGrey"
+                android:text="Continue With Phone Number"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintTop_toBottomOf="@id/tvOr_text" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin_google"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_login_selector_normal"
+                android:stateListAnimator="@xml/btn_state_list_animator"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:drawableStart="@drawable/google"
+                android:drawablePadding="-16dp"
+                android:text="Continue With Google"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin_phone_number" />
+
+            <!--TODO:should be Facebook Button-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin_facebook"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_login_selector_normal"
+                android:stateListAnimator="@xml/btn_state_list_animator"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:drawableStart="@drawable/facebook"
+                android:drawablePadding="-16dp"
+                android:text="Continue With Facebook"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin_google" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin_twitter"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_login_selector_normal"
+                android:stateListAnimator="@xml/btn_state_list_animator"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:drawableStart="@drawable/twitter"
+                android:drawablePadding="-16dp"
+                android:text="Continue With Twitter"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin_facebook" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin_github"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                app:layout_constraintStart_toEndOf="@id/__guide_vertical_1"
+                app:layout_constraintEnd_toStartOf="@id/__guide_vertical_2"
+                app:layout_constraintTop_toBottomOf="@id/btnLogin_twitter"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/btn_login_selector_normal"
+                android:stateListAnimator="@xml/btn_state_list_animator"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:drawableStart="@drawable/github"
+                android:drawablePadding="-16dp"
+                android:text="Continue With Github"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/__guide_horizontal_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".25"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/__guide_vertical_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".08"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/__guide_vertical_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".92"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide_horizontal_1"
@@ -238,5 +483,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".4"/>
+        app:layout_constraintGuide_begin="300dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_horizontal_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="370dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_horizontal_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="280dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

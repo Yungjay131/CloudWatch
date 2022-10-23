@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="dark_mode">
-        <attr name="background_color" format="color" />
-        <attr name="card_background" format="color" />
-        <attr name="text_color" format="color" />
+        <attr name="app_background_color" format="color" />
+        <attr name="app_card_background" format="color" />
+        <attr name="app_text_color" format="color" />
     </declare-styleable>
 </resources>
