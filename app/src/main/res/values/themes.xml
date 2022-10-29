@@ -24,7 +24,7 @@
 
         <item name="app_background_color">@color/white</item>
         <item name="app_card_background">@color/white</item>
-        <item name="app_text_color">@color/white</item>
+        <item name="app_title_text_color">@color/white</item>
 
         <item name="android:windowAnimationStyle">@style/windowAnimationTransition</item>
     </style>
@@ -36,7 +36,7 @@
 
         <item name="app_background_color">@color/white</item>
         <item name="app_card_background">@color/white</item>
-        <item name="app_text_color">@color/white</item>
+        <item name="app_title_text_color">@color/white</item>
 
         <item name="android:windowAnimationStyle">@style/windowAnimationTransition</item>
     </style>

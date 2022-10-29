@@ -6,27 +6,13 @@
         <entry key="..\:/Users/USER/work_projects/AndroidStudioProjects/Cloudwatch2/app/src/main/res/drawable/btn_login_selector.xml" value="0.1390625" />
         <entry key="..\:/Users/USER/work_projects/AndroidStudioProjects/Cloudwatch2/app/src/main/res/layout/activity_auth.xml" value="0.20817843866171004" />
         <entry key="..\:/Users/USER/work_projects/AndroidStudioProjects/Cloudwatch2/app/src/main/res/layout/activity_main.xml" value="0.1375" />
+        <entry key="..\:/Users/USER/work_projects/AndroidStudioProjects/Cloudwatch2/app/src/main/res/layout/fragment_auth_home.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/USER/work_projects/AndroidStudioProjects/Cloudwatch2/app/src/main/res/layout/layout_custom_text_input_layout.xml" value="0.22" />
       </map>
     </option>
   </component>
   <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/addedittask/AddEditTaskActivity.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/addedittask/AddEditTaskFragment.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/addedittask/AddEditTaskViewEvent.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/AddEditTaskIntentFactory.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/Intent.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/statistics/StatisticsActivity.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/statistics/StatisticsFragment.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/TaskEditorModelStore.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/TaskEditorState.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/tasks/TasksActivity.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/tasks/TasksAdapter.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/tasks/TasksFragment.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/tasks/TasksViewEvent.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/tasks/TaskViewHolder.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/TasksIntentFactory.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/TasksModelStore.kt" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/app/slyworks/cloudwatch/mvi/examples/TasksState.kt" />
+    <file url="file://$PROJECT_DIR$/mvi/src/main/java/app/slyworks/mvi/examples/Intent.kt" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

@@ -1,4 +1,4 @@
-package app.slyworks.cloudwatch.mvi
+package app.slyworks.mvi
 
 import com.jakewharton.rxrelay3.PublishRelay
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -16,7 +16,7 @@ open class ModelStore<S>(initialState: S) : Model<S> {
     private val store: ConnectableObservable<S> =
         intents
             .observeOn(AndroidSchedulers.mainThread())
-            .scan(initialState){ oldState:S, intent:Intent<S> -> intent.reduce(oldState) }
+            .scan(initialState){ oldState:S, intent: Intent<S> -> intent.reduce(oldState) }
             .replay(1)
             .apply{ connect() }
 
@@ -45,5 +45,5 @@ open class ModelStore<S>(initialState: S) : Model<S> {
      *
      * This is what views will subscribe to.
      */
-    override fun modelState(): Observable<S> = store
+    override fun getModelState(): Observable<S> = store
 }

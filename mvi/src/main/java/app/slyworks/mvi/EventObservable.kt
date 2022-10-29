@@ -1,4 +1,4 @@
-package app.slyworks.cloudwatch.mvi
+package app.slyworks.mvi
 
 import io.reactivex.rxjava3.core.Observable
 

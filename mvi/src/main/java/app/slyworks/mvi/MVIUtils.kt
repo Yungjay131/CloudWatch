@@ -1,6 +1,4 @@
-package app.slyworks.cloudwatch
-
-import app.slyworks.cloudwatch.mvi.Intent
+package app.slyworks.mvi
 
 
 /**
@@ -13,7 +11,7 @@ import app.slyworks.cloudwatch.mvi.Intent
  * NOTE: Magic of extension functions, (T)->T and T.()->T interchangeable.
  */
 fun <T> intent(block: T.() -> T) : Intent<T> =
-    object : Intent<T>{
+    object : Intent<T> {
         override fun reduce(oldState: T): T  = block(oldState)
     }
 
@@ -25,6 +23,6 @@ fun <T> intent(block: T.() -> T) : Intent<T> =
  * Use the `sideEffect {}` DSL function for those situations.
  */
 fun <T> sideEffect(block: T.() -> Unit) : Intent<T> =
-    object : Intent<T>{
+    object : Intent<T> {
         override fun reduce(oldState: T): T  = oldState.apply(block)
     }

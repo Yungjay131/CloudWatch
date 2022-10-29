@@ -44,6 +44,9 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':auth')
+    implementation project(path: ':models')
+    implementation project(path: ':mvi')
     implementation project(path: ':utils')
 
     implementation depends.appcompat
@@ -56,13 +59,16 @@ dependencies {
     implementation depends.glide
     implementation depends.shimmer
     implementation depends.rxjava
+    implementation depends.rxandroid
     implementation depends.rxbinding
     implementation depends.rxrelay
     implementation depends.navigator
     implementation depends.timber
     implementation depends.dagger
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt depends.dagger_kapt
     testImplementation depends.junit
+    testImplementation depends.mockito_kotlin
     androidTestImplementation depends.android_junit
     androidTestImplementation depends.espresso
     debugImplementation depends.leakcanary

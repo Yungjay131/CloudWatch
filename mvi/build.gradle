@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
 }
 
 apply from: "${rootProject.projectDir}/dependencies.gradle"
@@ -11,6 +10,7 @@ android {
     compileSdk sdkDetails.compileSDK
 
     defaultConfig {
+        applicationId sdkDetails.applicationID
         minSdk sdkDetails.minSDK
         targetSdk sdkDetails.targetSDK
         versionCode sdkDetails.versionCode
@@ -40,22 +40,13 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':crypto')
-    implementation (project(path: ':models')){
-        exclude(group: 'android.core', module: 'core-ktx')
-        exclude(group: 'androidx.appcompat', module: 'appcompat')
-    }
+    implementation project(path: ':utils')
 
     implementation depends.core_ktx
-    implementation depends.appcompat
-    implementation depends.play_auth
-    implementation platform(depends.firebase_bom)
-    implementation depends.firebase_auth
-    implementation depends.rxjava
+    implementation depends.rxandroid
     implementation depends.rxrelay
     implementation depends.timber
-    implementation depends.dagger
-    kapt depends.dagger_kapt
     testImplementation depends.junit
     androidTestImplementation depends.android_junit
+    debugImplementation depends.leakcanary
 }

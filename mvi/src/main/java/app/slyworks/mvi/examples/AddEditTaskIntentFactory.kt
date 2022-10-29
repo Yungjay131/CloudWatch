@@ -1,5 +1,6 @@
 package com.kanawish.sample.mvi.intent
 
+import app.slyworks.mvi.intent
 import com.kanawish.sample.mvi.model.Task
 import com.kanawish.sample.mvi.model.TaskEditorModelStore
 import com.kanawish.sample.mvi.model.TaskEditorState

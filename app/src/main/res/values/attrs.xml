@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="dark_mode">
+    <declare-styleable name="theme">
         <attr name="app_background_color" format="color" />
         <attr name="app_card_background" format="color" />
-        <attr name="app_text_color" format="color" />
+        <attr name="app_et_background" format="color" />
+        <attr name="app_title_text_color" format="color" />
+        <attr name="app_subtitle_text_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="ctil_input_type" format="flags"/>
     </declare-styleable>
 </resources>

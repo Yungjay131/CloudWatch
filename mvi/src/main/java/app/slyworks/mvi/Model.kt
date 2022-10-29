@@ -1,4 +1,4 @@
-package app.slyworks.cloudwatch.mvi
+package app.slyworks.mvi
 
 import io.reactivex.rxjava3.core.Observable
 
@@ -13,7 +13,7 @@ interface Model<S> {
      * ModelState is immutable. Processed intents will work much like `copy()`
      * and create a new (modified) modelState from an old one.
      */
-    fun process(intent:Intent<S>)
+    fun process(intent: Intent<S>)
 
     /**
      * Observable stream of changes to ModelState
@@ -23,5 +23,5 @@ interface Model<S> {
      *
      * This is what views will subscribe to.
      */
-    fun modelState(): Observable<S>
+    fun getModelState(): Observable<S>
 }

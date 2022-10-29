@@ -66,6 +66,8 @@ _depends.facebook_sdk = "com.facebook.android:facebook-android-sdk:$facebook"
 
 _depends.rxjava = "io.reactivex.rxjava3:rxjava:3.1.3"
 
+_depends.rxandroid = "io.reactivex.rxjava3:rxandroid:3.0.0"
+
 def rxbinding = "4.0.0"
 _depends.rxbinding = "com.jakewharton.rxbinding4:rxbinding:$rxbinding"
 _depends.rxbinding_material = "com.jakewharton.rxbinding4:rxbinding-material:$rxbinding"
