@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/app_background_color"
-    tools:context=".views.auth_activity.AuthActivity"
+    tools:context=".views.activities.auth_activity.AuthActivity"
     android:transitionGroup="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -280,7 +280,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:paddingBottom="30dp"
         android:scrollIndicators="right"
-        android:scrollBars="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarSize="2dp"
         android:fadeScrollbars="false"

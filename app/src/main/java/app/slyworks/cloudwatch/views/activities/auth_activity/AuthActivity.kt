@@ -1,29 +1,25 @@
-package app.slyworks.cloudwatch.views.auth_activity
+package app.slyworks.cloudwatch.views.activities.auth_activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import app.slyworks.auth.LoginManager
 import app.slyworks.cloudwatch.databinding.ActivityAuthBinding
-import app.slyworks.mvi.EventObservable
-import app.slyworks.mvi.StateSubscriber
+import app.slyworks.cloudwatch.views.activities.BaseActivity
 import app.slyworks.navigator.Navigator
 import app.slyworks.navigator.interfaces.FragmentContinuationStateful
 import javax.inject.Inject
 
-class AuthActivity : AppCompatActivity(),
-    StateSubscriber<ViewState>,
-    EventObservable<> {
+class AuthActivity : BaseActivity() {
     //region Vars
     private lateinit var binding:ActivityAuthBinding
     private lateinit var navigator:FragmentContinuationStateful
 
     @Inject
-    lateinit var loginManager: LoginManager
-
-    @Inject
-    lateinit var authViewModel:AuthViewModel
+    lateinit var authViewModel: AuthViewModel
     //endregion
+
+    companion object{
+        private var hasDaggerBeenInitialized:Boolean = false
+    }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
@@ -39,11 +35,15 @@ class AuthActivity : AppCompatActivity(),
 
     override fun onDestroy() {
         super.onDestroy()
+        hasDaggerBeenInitialized = false
         navigator.onDestroy()
-        loginManager.unbind()
+        authViewModel.unbind()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        if(!hasDaggerBeenInitialized){
+            hasDaggerBeenInitialized = true
+        }
         super.onCreate(savedInstanceState)
 
         /* TODO: add fullscreen code here from iGrades and extra from StackOverflow */
@@ -56,7 +56,11 @@ class AuthActivity : AppCompatActivity(),
     }
 
     private fun initData(){
-        loginManager.bind(this)
+        authViewModel.bind(this)
+        authViewModel.messageLiveData.observe(this){ displayMessage(it) }
+        authViewModel.loginButtonProgressLiveData.observe(this){}
+        authViewModel.progressLiveData.observe(this){ }
+        authViewModel.loggedInLiveData.observe(this){}
     }
 
     private fun initViews(){

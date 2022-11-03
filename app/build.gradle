@@ -65,7 +65,7 @@ dependencies {
     implementation depends.navigator
     implementation depends.timber
     implementation depends.dagger
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation depends.legacy_support
     kapt depends.dagger_kapt
     testImplementation depends.junit
     testImplementation depends.mockito_kotlin

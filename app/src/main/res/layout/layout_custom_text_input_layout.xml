@@ -8,15 +8,17 @@
     android:background="?attr/app_et_background">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:boxBackgroundMode="none"
         app:boxBackgroundColor="@android:color/transparent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

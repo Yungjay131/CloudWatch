@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cloudwatch">
         <activity
-            android:name=".views.auth_activity.AuthActivity"
+            android:name=".views.activities.auth_activity.AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".views.SplashActivity"
+            android:name=".views.activities.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

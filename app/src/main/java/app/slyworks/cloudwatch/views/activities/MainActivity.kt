@@ -1,4 +1,4 @@
-package app.slyworks.cloudwatch.views
+package app.slyworks.cloudwatch.views.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

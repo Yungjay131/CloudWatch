@@ -28,7 +28,7 @@ import timber.log.Timber
  * Created by Joshua Sylvanus, 5:57 PM, 01-Oct-22.
  */
 class LoginManager(private val firebaseAuth: FirebaseAuth,
-                   private val cryptoManager: CryptoManager) {
+                   private val cryptoManager: CryptoManager): LoginRepository {
     //region Vars
     private val googleSignInSubject: PublishRelay<Outcome> = PublishRelay.create()
     private lateinit var googleOneTapSignInClient:SignInClient
@@ -36,7 +36,7 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
     private lateinit var googleSignInLauncher2:ActivityResultLauncher<Intent>
     //endregion
 
-    fun bind(activity: AppCompatActivity){
+    override fun bind(activity: AppCompatActivity){
        googleOneTapSignInClient = Identity.getSignInClient(activity)
        googleSignInLauncher1 =
         activity.registerForActivityResult(
@@ -49,13 +49,13 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
             MActivityResultCallback(googleSignInSubject))
     }
 
-    fun unbind(){
+    override fun unbind(){
         googleSignInLauncher1.unregister()
         googleSignInLauncher2.unregister()
     }
 
-    fun loginViaEmail(email:String, password:String):Observable<Outcome>
-    = cryptoManager.encrypt(email)
+    override fun loginViaEmail(email:String, password:String):Observable<Outcome>
+    = Observable.just(email)
             .zipWith(cryptoManager.hash(password), ::Pair)
             .flatMap{ it:Pair<String,String> -> loginWithFirebaseAuth(it) }
             .onErrorReturn {
@@ -76,9 +76,9 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
 
                 emitter.onComplete()
             }
-    }
+        }
 
-    fun loginViaGoogle(context: Context):Observable<Outcome>{
+    override fun loginViaGoogle(context: Context):Observable<Outcome>{
         /* configure google sign in */
         val googleSignInOptions:GoogleSignInOptions =
             GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -117,7 +117,11 @@ class LoginManager(private val firebaseAuth: FirebaseAuth,
                 }
             }
 
-        return googleSignInSubject.hide()
+        return googleSignInSubject
+               .onErrorReturn{
+                   Timber.e("error occurred: ${it.message}")
+                   Outcome.ERROR<Boolean>(false, additionalInfo = it.message)
+               }.hide()
     }
 
     inner class MActivityResultCallback(private val o:PublishRelay<Outcome>)

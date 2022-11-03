@@ -1,4 +1,4 @@
-package app.slyworks.cloudwatch.views.auth_activity
+package app.slyworks.cloudwatch.views.activities.auth_activity
 
 import android.content.Context
 import android.os.Bundle
@@ -11,7 +11,7 @@ import app.slyworks.cloudwatch.databinding.FragmentAuthHomeBinding
 class AuthHomeFragment : Fragment() {
     //region Vars
     private lateinit var binding:FragmentAuthHomeBinding
-    private lateinit var activity:AuthActivity
+    private lateinit var activity: AuthActivity
     //endregion
 
     companion object {
@@ -42,8 +42,8 @@ class AuthHomeFragment : Fragment() {
 
     private fun initData(){}
     private fun initViews(){
-        binding.btnLogin.setOnClickListener{ activity.inflateFragment(LoginFragment.newInstance()) }
-        binding.btnSignUp.setOnClickListener{ activity.inflateFragment(SignupFragment.newInstance()) }
+        binding.btnLogin.setOnClickListener{ activity.inflateFragment(AuthLoginFragment.newInstance()) }
+        binding.btnSignUp.setOnClickListener{ activity.inflateFragment(AuthSignupFragment.newInstance()) }
         binding.btnLoginPhoneNumber.setOnClickListener{ activity.inflateFragment(PhoneNumberAuthFragment.newInstance())}
         binding.btnLoginGoogle.setOnClickListener{ activity.}
         binding.btnLoginFacebook.setOnClickListener{ }
