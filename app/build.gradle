@@ -21,13 +21,13 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled config.minifyEnabled
+            shrinkResources config.shrinkResources
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled config.minifyEnabled
+            shrinkResources config.shrinkResources
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -44,10 +44,10 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':auth')
-    implementation project(path: ':models')
-    implementation project(path: ':mvi')
-    implementation project(path: ':utils')
+    implementation project(path: ':libs:auth-lib')
+    implementation project(path: ':libs:models-lib')
+    implementation project(path: ':libs:mvi-lib')
+    implementation project(path: ':libs:utils-lib')
 
     implementation depends.appcompat
     implementation depends.core_ktx
@@ -67,9 +67,9 @@ dependencies {
     implementation depends.dagger
     implementation depends.legacy_support
     kapt depends.dagger_kapt
-    testImplementation depends.junit
-    testImplementation depends.mockito_kotlin
-    androidTestImplementation depends.android_junit
-    androidTestImplementation depends.espresso
+    testImplementation test_depends.junit
+    testImplementation test_depends.mockito_kotlin
+    androidTestImplementation test_depends.android_junit
+    androidTestImplementation test_depends.espresso
     debugImplementation depends.leakcanary
 }

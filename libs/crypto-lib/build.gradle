@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: "${rootProject.projectDir}/dependencies.gradle"
+
+android {
+    compileSdk sdkDetails.compileSDK
+
+    defaultConfig {
+        minSdk sdkDetails.minSDK
+        targetSdk sdkDetails.targetSDK
+        versionCode sdkDetails.versionCode
+        versionName sdkDetails.versionName
+
+        testInstrumentationRunner defaultTestInstrumentationRunner
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled config.minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled config.minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    testOptions {
+        animationsDisabled = true
+        unitTests{
+            includeAndroidResources = true
+        }
+    }
+}
+
+dependencies {
+    implementation depends.appcompat
+    implementation depends.core_ktx
+    implementation depends.material
+    implementation depends.rxjava
+    implementation depends.rxrelay
+    implementation depends.timber
+    implementation depends.dagger
+    kapt depends.dagger_kapt
+
+    testImplementation test_depends.junit
+    testImplementation test_depends.mockito_kotlin
+    testImplementation test_depends.mockito
+    testImplementation test_depends.mockito_android
+    testImplementation test_depends.core_testing
+    testImplementation test_depends.robolectric
+    testImplementation test_depends.coroutines_testing
+    testImplementation test_depends.mock_webserver
+    testImplementation test_depends.android_junit
+    testImplementation test_depends.android_runner
+    testImplementation test_depends.rules
+    testImplementation test_depends.truth
+    testImplementation test_depends.espresso
+}

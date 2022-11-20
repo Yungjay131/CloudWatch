@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: "${rootProject.projectDir}/dependencies.gradle"
+
+android {
+    compileSdk sdkDetails.compileSDK
+
+    defaultConfig {
+        minSdk sdkDetails.minSDK
+        targetSdk sdkDetails.targetSDK
+        versionCode sdkDetails.versionCode
+        versionName sdkDetails.versionName
+
+        testInstrumentationRunner defaultTestInstrumentationRunner
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled config.minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled config.minifyEnabled
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation project(path: ':libs:auth-lib')
+    implementation project(path: ':libs:models-lib')
+    implementation project(path: ':libs:utils-lib')
+
+    implementation depends.appcompat
+    implementation depends.core_ktx
+    implementation depends.lifecycle_viewmodel
+    implementation depends.preference_ktx
+    implementation depends.material
+    implementation depends.constraintlayout
+    implementation depends.cardview
+    implementation depends.glide
+    implementation depends.shimmer
+    implementation depends.rxjava
+    implementation depends.rxandroid
+    implementation depends.rxbinding
+    implementation depends.rxrelay
+    implementation depends.navigator
+    implementation depends.timber
+    implementation depends.dagger
+    implementation depends.legacy_support
+    kapt depends.dagger_kapt
+    testImplementation test_depends.junit
+    testImplementation test_depends.mockito_kotlin
+    androidTestImplementation test_depends.android_junit
+    androidTestImplementation test_depends.espresso
+    debugImplementation depends.leakcanary
+}

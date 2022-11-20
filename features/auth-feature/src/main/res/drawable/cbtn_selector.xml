@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_pressed="true">
+
+        <shape
+            android:shape="rectangle" />
+
+        <corners
+            android:radius="@dimen/cbtn_corner_radius" />
+
+        <solid
+            android:color="?attr/app_btn_color_pressed" />
+    </item>
+
+    <item>
+        <shape
+            android:shape="rectangle" />
+
+        <corners
+            android:radius="@dimen/cbtn_corner_radius" />
+
+        <solid
+            android:color="?attr/app_btn_color_default" />
+    </item>
+</selector>

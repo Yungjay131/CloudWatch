@@ -11,5 +11,11 @@
     <dimen name="tab_item_height2">8dp</dimen>
     <dimen name="et_corner_radius">12dp</dimen>
 
+    <dimen name="ctil_corner_radius">12dp</dimen>
+    <dimen name="ctil_srtoke_width_focused">1.5dp</dimen>
+    <dimen name="ctil_stroke_width_default">1dp</dimen>
+
+    <dimen name="cbtn_corner_radius">32dp</dimen>
+
     <item name="guide_percent" format="float" type="integer">0.6</item>
 </resources>

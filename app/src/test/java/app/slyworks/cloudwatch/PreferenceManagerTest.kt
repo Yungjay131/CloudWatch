@@ -1,5 +1,6 @@
 package app.slyworks.cloudwatch
 
+import app.slyworks.utils.PreferenceManager
 import org.junit.Assert.*
 import org.junit.Test
 

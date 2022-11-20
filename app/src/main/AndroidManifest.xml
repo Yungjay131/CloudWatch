@@ -10,11 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cloudwatch">
         <activity
-            android:name=".views.activities.auth_activity.AuthActivity"
+            android:name="app.slyworks.auth_feature.AuthActivity"
             android:exported="false" />
+
         <activity
-            android:name=".views.activities.SplashActivity"
+            android:name="app.slyworks.splash_feature.SplashActivity"
             android:exported="false" />
+
         <activity
             android:name=".views.activities.MainActivity"
             android:exported="true">

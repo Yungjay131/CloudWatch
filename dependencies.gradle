@@ -1,25 +1,24 @@
 ext.depends = [:]
+ext.test_depends = [:]
 ext.sdkDetails = [:]
-ext.plugs = [:]
+ext.config = [:]
 
 def _depends = [:]
+def _test_depends = [:]
 def _sdkDetails = [:]
-def _plugins = [:]
+def _config = [:]
 
-_plugins.application = "com.android.application"
-_plugins.google_services = "com.google.gms.google-services"
-_plugins.kotlin_android = "kotlin-android"
-_plugins.kotlin_kapt = "kotlin-kapt"
-_plugins.firebase_crashlytics = "com.google.firebase.crashlytics"
-
-_sdkDetails.compileSDK = 33
+_sdkDetails.compileSDK = 32
 _sdkDetails.applicationID = "app.slyworks.cloudwatch"
 _sdkDetails.minSDK = 21
-_sdkDetails.targetSDK = 33
+_sdkDetails.targetSDK = 32
 _sdkDetails.versionCode = 1
 _sdkDetails.versionName = "1.0.0"
 
-_depends.material = "com.google.android.material:material:1.6.1"
+_config.shrinkResources = false
+_config.minifyEnabled = false
+
+_depends.material = "com.google.android.material:material:1.5.0"
 _depends.constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
 _depends.cardview = "androidx.cardview:cardview:1.0.0"
 _depends.drawerlayout = "androidx.drawerlayout:drawerlayout:1.1.1"
@@ -94,15 +93,31 @@ _depends.navigator = "app.slyworks.navigator:navigator:1.0.0-alpha"
 _depends.leakcanary = "com.squareup.leakcanary:leakcanary-android:2.8.1"
 
 _depends.timber = "com.jakewharton.timber:timber:5.0.1"
-
-_depends.mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
-
 _depends.lottie = "com.airbnb.android:lottie:5.0.3"
 _depends.glide = "com.github.bumptech.glide:glide:4.13.0"
 _depends.circle_imageview = "de.hdodenhof:circleimageview:3.1.0"
 _depends.shimmer = "com.facebook.shimmer:shimmer:0.5.0"
 
+_test_depends.mock_webserver = "com.squareup.okhttp3:mockwebserver:3.12.0"
+_test_depends.core_testing = "androidx.arch.core:core-testing:2.1.0"
+_test_depends.junit = "junit:junit:4.13.2"
+_test_depends.robolectric = "org.robolectric:robolectric:4.9"
+_test_depends.core_testing = "androidx.arch.core:core-testing:2.1.0"
+_test_depends.android_junit = "androidx.test.ext:junit:1.1.2"
+_test_depends.android_runner = "androidx.test:runner:1.3.0"
+_test_depends.jupiter = "org.junit.jupiter:junit-jupiter-engine:5.7.1"
+_test_depends.espresso = "androidx.test.espresso:espresso-core:3.3.0"
+_test_depends.mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+_test_depends.mockito = "org.mockito.kotlin:mockito-kotlin:3.2.0"
+_test_depends.mockito_android = "org.mockito:mockito-android:3.10.0"
+_test_depends.coroutines_testing = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+_test_depends.truth = "androidx.test.ext:truth:1.4.0"
+_test_depends.rules = "androidx.test:rules:1.4.0"
+/* for mocking final class, instead of mockito-maker-inline process */
+test_depends.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito-inline:2.28.1"
+
 ext.defaultTestInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+ext.test_depends = _test_depends
 ext.depends = _depends
 ext.sdkDetails = _sdkDetails
-ext.plugs = _plugins
+ext.config = _config
