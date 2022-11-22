@@ -8,7 +8,7 @@
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Gradle/gradle-7.4.2" />
-        <option name="gradleJvm" value="Android Studio default JDK" />
+        <option name="gradleJvm" value="14" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -21,11 +21,11 @@
             <option value="$PROJECT_DIR$/libs/crypto-lib" />
             <option value="$PROJECT_DIR$/libs/models-lib" />
             <option value="$PROJECT_DIR$/libs/mvi-lib" />
+            <option value="$PROJECT_DIR$/libs/navigation-lib" />
             <option value="$PROJECT_DIR$/libs/ui-commons-lib" />
             <option value="$PROJECT_DIR$/libs/utils-lib" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

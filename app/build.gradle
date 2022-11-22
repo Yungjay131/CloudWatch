@@ -64,12 +64,13 @@ dependencies {
     implementation depends.rxrelay
     implementation depends.navigator
     implementation depends.timber
-    implementation depends.dagger
     implementation depends.legacy_support
+
+    implementation depends.dagger
     kapt depends.dagger_kapt
+
     testImplementation test_depends.junit
     testImplementation test_depends.mockito_kotlin
-    androidTestImplementation test_depends.android_junit
-    androidTestImplementation test_depends.espresso
-    debugImplementation depends.leakcanary
+    testImplementation test_depends.android_junit
+    testImplementation test_depends.espresso
 }

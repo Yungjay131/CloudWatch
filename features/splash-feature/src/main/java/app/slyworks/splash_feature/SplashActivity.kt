@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
     private val disposables:CompositeDisposable = CompositeDisposable()
 
     @Inject
-    lateinit var themeManager: app.slyworks.ui_commons_lib.ThemeManager
+    lateinit var themeManager: ThemeManager
     //endregion
 
     override fun onCreate(savedInstanceState: Bundle?) {

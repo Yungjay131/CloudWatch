@@ -12,6 +12,52 @@ buildscript {
      }
 }
 
+apply from: "${rootProject.projectDir}/dependencies.gradle"
+
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            //apply plugin: "com.github.ben-manes.versions"
+
+            android {
+                compileSdkVersion sdkDetails.compileSDK
+
+                defaultConfig {
+                    minSdkVersion sdkDetails.minSDK
+                    targetSdkVersion sdkDetails.targetSDK
+                    versionCode sdkDetails.versionCode
+                    versionName sdkDetails.versionName
+
+                    testInstrumentationRunner defaultTestInstrumentationRunner
+                    consumerProguardFiles "consumer-rules.pro"
+                }
+
+                buildTypes {
+                    debug {
+                        minifyEnabled config.minifyEnabled
+                        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                    }
+                    release {
+                        minifyEnabled config.minifyEnabled
+                        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                    }
+                }
+
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+                kotlinOptions {
+                    jvmTarget = '1.8'
+                }
+                viewBinding {
+                    enabled true
+                }
+            }
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

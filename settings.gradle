@@ -8,11 +8,12 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Cloudwatch"
 include ':app'
+include ':features:splash-feature'
+include ':features:auth-feature'
 include ':libs:auth-lib'
 include ':libs:crypto-lib'
 include ':libs:models-lib'
 include ':libs:utils-lib'
 include ':libs:mvi-lib'
-include ':features:auth-feature'
 include ':libs:ui-commons-lib'
-include ':features:splash-feature'
+include ':libs:navigation-lib'

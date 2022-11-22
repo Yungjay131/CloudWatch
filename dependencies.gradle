@@ -114,7 +114,7 @@ _test_depends.coroutines_testing = "org.jetbrains.kotlinx:kotlinx-coroutines-tes
 _test_depends.truth = "androidx.test.ext:truth:1.4.0"
 _test_depends.rules = "androidx.test:rules:1.4.0"
 /* for mocking final class, instead of mockito-maker-inline process */
-test_depends.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito-inline:2.28.1"
+_test_depends.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito-inline:2.28.1"
 
 ext.defaultTestInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 ext.test_depends = _test_depends
