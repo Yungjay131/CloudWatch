@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.annotation.IdRes
 import app.slyworks.utils.KEY_IS_DARK_THEME
+import app.slyworks.utils.PreferenceManager
 
 
 /**

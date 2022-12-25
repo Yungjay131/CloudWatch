@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import app.slyworks.auth.LoginRepository
+import app.slyworks.auth.interfaces.LoginRepository
 import app.slyworks.auth.OTPVerificationStage
-import app.slyworks.auth.RegistrationRepository
+import app.slyworks.auth.interfaces.RegistrationRepository
 import app.slyworks.utils.plusAssign
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -17,7 +17,8 @@ import javax.inject.Inject
 class AuthViewModel
 @Inject
 constructor(private val registrationManager: RegistrationRepository,
-            private val loginManager: LoginRepository) : ViewModel() {
+            private val loginManager: LoginRepository
+) : ViewModel() {
 
     val registrationSuccessfulLiveData:MutableLiveData<Boolean> = MutableLiveData(false)
 

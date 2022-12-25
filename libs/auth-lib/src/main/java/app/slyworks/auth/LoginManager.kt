@@ -9,6 +9,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import app.slyworks.auth.interfaces.LoginRepository
 import app.slyworks.crypto.CryptoHelper
 import app.slyworks.models.Outcome
 import app.slyworks.utils.onNextAndComplete
@@ -36,6 +37,7 @@ import java.util.concurrent.TimeUnit
 enum class OTPVerificationStage{
     ENTER_OTP, PROCESSING, VERIFICATION_SUCCESS,VERIFICATION_FAILURE
 }
+
 class LoginManager(private val firebaseAuth: FirebaseAuth,
                    private val cryptoHelper: CryptoHelper): LoginRepository {
     //region Vars

@@ -16,5 +16,8 @@ dependencies {
     implementation depends.material
     implementation depends.rxjava
 
+    implementation depends.dagger
+    kapt depends.dagger_kapt
+
     debugImplementation depends.leakcanary
 }

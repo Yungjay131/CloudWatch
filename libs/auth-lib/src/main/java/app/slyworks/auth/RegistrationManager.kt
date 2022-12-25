@@ -1,5 +1,6 @@
 package app.slyworks.auth
 
+import app.slyworks.auth.interfaces.RegistrationRepository
 import app.slyworks.crypto.CryptoHelper
 import app.slyworks.models.Outcome
 import app.slyworks.utils.onNextAndComplete
@@ -13,7 +14,7 @@ import timber.log.Timber
  */
 class RegistrationManager(private val firebaseAuth:FirebaseAuth,
                           private val cryptoHelper: CryptoHelper) :
-      RegistrationRepository {
+    RegistrationRepository {
 
     private fun registerEmail(email:String, password:String):Observable<Outcome> =
         Observable.create<Outcome> { emitter ->

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 apply from: "${rootProject.projectDir}/dependencies.gradle"
@@ -38,7 +39,12 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':libs:utils-lib')
+
     implementation depends.appcompat
     implementation depends.core_ktx
     implementation depends.material
+
+    implementation depends.dagger
+    kapt depends.dagger_kapt
 }

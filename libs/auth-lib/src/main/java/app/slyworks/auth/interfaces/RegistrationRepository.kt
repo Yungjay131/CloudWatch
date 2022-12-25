@@ -1,4 +1,4 @@
-package app.slyworks.auth
+package app.slyworks.auth.interfaces
 
 import app.slyworks.models.Outcome
 import io.reactivex.rxjava3.core.Observable

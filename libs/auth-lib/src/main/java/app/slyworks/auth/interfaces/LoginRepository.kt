@@ -1,4 +1,4 @@
-package app.slyworks.auth
+package app.slyworks.auth.interfaces
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
